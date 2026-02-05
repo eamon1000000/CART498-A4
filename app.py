@@ -41,7 +41,7 @@ def index():
 
         except Exception as e:
             result = f"Error: {str(e)}"
-    return render_template("index.html", result=result)
+    return render_template("index.html", result=result, image_data=image_data)
 
 if __name__ == "__main__":
     app.run(debug=True)  # Run locally for testing
