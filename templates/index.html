@@ -20,10 +20,12 @@
         
         {% if result %}
             <h3 class="mt-4">Response:</h3>
-            <div class="alert alert-secondary">{{ result }}
-                <img src="static/output.png" alt="Generated Image">
+            <div class="alert alert-secondary">
+                {{ result }}
+                {% if image_data %}
+                    <img src="data:image/png;base64,{{ image_data }}" alt="Generated Image">
+                {% endif %}
             </div>
-            
         {% endif %}
     </div>
 </body>

@@ -15,6 +15,7 @@ openai.api_key = os.getenv("OPENAI_API_KEY")  # Securely load API key
 @app.route("/", methods=["GET", "POST"])
 def index():
     result = None
+    image_data = None  # Add this
     if request.method == "POST":
         prompt = request.form["prompt"]
         try:
@@ -34,9 +35,7 @@ def index():
                 size="1024x1024"
             )
 
-            image_bytes = base64.b64decode(img.data[0].b64_json)
-            with open("static/output.png", "wb") as f:
-                f.write(image_bytes)
+            image_data = img.data[0].b64_json
             
 
 
