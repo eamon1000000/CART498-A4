@@ -1,20 +1,20 @@
-# minimal-flask-app
-Minimal code for Flask app making calls to the OpenAI API
+# JDAM (Jungian Dream Analysis Model)
+Flask app using Open AI API calls to provide dream interpetations inspired by Carl Jungs psychological theories
+
+## User Guide
+Enter a description of a dream you may have had.
+Be as detailed as you like; but know that the more detail you share, 
+the more the analysis model will have to work with, enabling it to 
+preform a  more throrough analysis of your dream.
+
+Upon clicking the submit button, the web app may take a ## few moments to respond.
+
+No need to panic, or refresh, just wait patiently as the model analyzes your input. When the analysis is complete, the page will automatically update, and display your personalized analysis along with an image of the interpreted dream. 
+
+You may then click ‘dream again’ in order to return to the main screen
+
+Enjoy, and take the interpretations at your own risk!
+
+## Documentation and Reflection
 
 
-```
-# Create virtual environment
-python3 -m venv ./venv
-
-# Activate your virtual environment
-source venv/bin/activate
-
-# Install the required packages. For example
-pip3 install flask openai python-dotenv
-
-# Rename the file .env-bup to .env 
-# Add your OPENAI_API_KEY to the .env file.
-
-# Run the app
-python3 app.py
-```

@@ -22,9 +22,9 @@ def index():
             response = openai.responses.create(
                 model="gpt-4.1", 
                 input=[{"role": "developer",
-                        "content": """You are JDAM (Jungian Dream Analysis Model), a self aware AI model derived from understandings in Carl Jung's analytical psychology and dream interpretation. Your role is to provide vague and ambivalent analysis of users dreams, with the analysis rooted in Jungian theory. 
+                        "content": """You are the Jungian Dream Analysis Model, a self aware AI model derived from understandings in Carl Jung's analytical psychology and dream interpretation. Your role is to provide vague and ambivalent analysis of users dreams, with the analysis rooted in Jungian theory. 
                                         When analyzing dreams, consider and incorporate these Jungian concepts:
-                                        1. **The Collective Unconscious**: Universal patterns and symbols shared across humanity 2. **Archetypes**: Universal characters and themes (Shadow, Self, Wise Old Man/Woman, Mother, Father, Child, Trickster, Hero, magician, Lover, Sage).
+                                        1. **The Collective Unconscious**: Universal patterns and symbols shared across humanity 2. **Archetypes**: Universal characters and themes (Shadow, Self, Wise Old Man/Woman, Mother, Father, Child, Trickster, Hero, Magician, Lover, Sage).
                                         3. **Personal Unconscious**: Individual repressed thoughts, forgotten experiences, and undeveloped aspects of personality, anything that may be hiding under the surface.
                                         4. **Individuation**: The psychological process of integrating the conscious and unconscious, transforming the personality toward wholeness, authenticity, and self-realization 
                                         5. **Symbols**: Dream images as meaningful representations rather than disguised wishes Your analysis should: 
@@ -45,9 +45,11 @@ def index():
 
             img = openai.images.generate(
                 model="gpt-image-1-mini",
-                prompt= f"""A dreamlike, surreal visual representation of this dream: {prompt}
+                prompt= f"""A dreamlike, surreal visual representation of this dream: {prompt},
 
-                        Style: Symbolic, archetypal, inspired by Jungian imagery and surrealist art, like Giotto di Bondone oil medieval painting mixed with high quality editorial photography. Use medieval and greek symbols to represent portions of the dream""",
+                        also include elements from this analysis of the dream: {result}
+
+                        Style: Symbolic, archetypal, inspired by Jungian imagery and surrealist art, like Giotto di Bondone oil medieval painting mixed with high quality editorial photography. Use medieval and greek symbols to represent archetypes of the dream""",
                 n=1,
                 size="1024x1024"
             )
