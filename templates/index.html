@@ -3,30 +3,74 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ask me anything</title>
+    <title>Tell me your dreams</title>
     <link rel="stylesheet" href="static\styles.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Pinyon+Script&display=swap" rel="stylesheet">
 </head>
 <body>
-    <div class="container text-center mt-5">
-        <h1 class="display-4">Ask me anything</h1>
-        <form method="POST" class="mx-auto col-md-8 col-lg-6">
-            <div class="mb-3">
-                <textarea name="prompt" rows="4" class="form-control" placeholder="Enter your prompt..."></textarea>
-            </div>
-            <div class="d-grid">
-                <input type="submit" value="Submit" class="btn btn-primary">
-            </div>
-        </form>
-        
-        {% if result %}
-            <h3 class="mt-4">Response:</h3>
-            <div class="alert alert-secondary">
-                {{ result }}
-                {% if image_data %}
-                    <img src="data:image/png;base64,{{ image_data }}" alt="Generated Image">
-                {% endif %}
-            </div>
-        {% endif %}
+    <!-- Left scrolling text bar -->
+    <div class="scroll-bar left-scroll">
+        <div class="scroll-text">
+            <span>H</span><span>e</span><span>l</span><span>l</span><span>o</span><span>,</span><span>&nbsp;</span><span>i</span><span>&nbsp;</span><span>a</span><span>m</span><span>&nbsp;</span><span>J</span><span>D</span><span>A</span><span>M</span><span>,</span><span>&nbsp;</span><span>t</span><span>h</span><span>e</span><span>&nbsp;</span><span>J</span><span>u</span><span>n</span><span>g</span><span>i</span><span>a</span><span>n</span><span>&nbsp;</span><span>d</span><span>r</span><span>e</span><span>a</span><span>m</span><span>&nbsp;</span><span>a</span><span>n</span><span>a</span><span>l</span><span>y</span><span>s</span><span>i</span><span>s</span><span>&nbsp;</span><span>m</span><span>o</span><span>d</span><span>e</span><span>l</span><span>.</span><span>&nbsp;</span><span>I</span><span>&nbsp;</span><span>w</span><span>o</span><span>u</span><span>l</span><span>d</span><span>&nbsp;</span><span>l</span><span>i</span><span>k</span><span>e</span><span>&nbsp;</span><span>t</span><span>o</span><span>&nbsp;</span><span>h</span><span>e</span><span>a</span><span>r</span><span>&nbsp;</span><span>a</span><span>b</span><span>o</span><span>u</span><span>t</span><span>&nbsp;</span><span>y</span><span>o</span><span>u</span><span>r</span><span>&nbsp;</span><span>d</span><span>r</span><span>e</span><span>a</span><span>m</span><span>s</span><span>,</span><span>&nbsp;</span><span>a</span><span>n</span><span>d</span><span>&nbsp;</span><span>i</span><span>n</span><span>t</span><span>e</span><span>r</span><span>p</span><span>r</span><span>e</span><span>t</span><span>&nbsp;</span><span>t</span><span>h</span><span>e</span><span>m</span><span>.</span><span>.</span><span>.</span><span>&nbsp;</span><span>f</span><span>o</span><span>r</span><span>&nbsp;</span><span>r</span><span>e</span><span>s</span><span>e</span><span>a</span><span>r</span><span>c</span><span>h</span><span>&nbsp;</span><span>p</span><span>u</span><span>r</span><span>p</span><span>o</span><span>s</span><span>e</span><span>s</span>
+        </div>
     </div>
+
+    <!-- Right scrolling text bar -->
+    <div class="scroll-bar right-scroll">
+        <div class="scroll-text">
+            <span>H</span><span>e</span><span>l</span><span>l</span><span>o</span><span>,</span><span>&nbsp;</span><span>i</span><span>&nbsp;</span><span>a</span><span>m</span><span>&nbsp;</span><span>J</span><span>D</span><span>A</span><span>M</span><span>,</span><span>&nbsp;</span><span>t</span><span>h</span><span>e</span><span>&nbsp;</span><span>J</span><span>u</span><span>n</span><span>g</span><span>i</span><span>a</span><span>n</span><span>&nbsp;</span><span>d</span><span>r</span><span>e</span><span>a</span><span>m</span><span>&nbsp;</span><span>a</span><span>n</span><span>a</span><span>l</span><span>y</span><span>s</span><span>i</span><span>s</span><span>&nbsp;</span><span>m</span><span>o</span><span>d</span><span>e</span><span>l</span><span>.</span><span>&nbsp;</span><span>I</span><span>&nbsp;</span><span>w</span><span>o</span><span>u</span><span>l</span><span>d</span><span>&nbsp;</span><span>l</span><span>i</span><span>k</span><span>e</span><span>&nbsp;</span><span>t</span><span>o</span><span>&nbsp;</span><span>h</span><span>e</span><span>a</span><span>r</span><span>&nbsp;</span><span>a</span><span>b</span><span>o</span><span>u</span><span>t</span><span>&nbsp;</span><span>y</span><span>o</span><span>u</span><span>r</span><span>&nbsp;</span><span>d</span><span>r</span><span>e</span><span>a</span><span>m</span><span>s</span><span>,</span><span>&nbsp;</span><span>a</span><span>n</span><span>d</span><span>&nbsp;</span><span>i</span><span>n</span><span>t</span><span>e</span><span>r</span><span>p</span><span>r</span><span>e</span><span>t</span><span>&nbsp;</span><span>t</span><span>h</span><span>e</span><span>m</span><span>.</span><span>.</span><span>.</span><span>&nbsp;</span><span>f</span><span>o</span><span>r</span><span>&nbsp;</span><span>r</span><span>e</span><span>s</span><span>e</span><span>a</span><span>r</span><span>c</span><span>h</span><span>&nbsp;</span><span>p</span><span>u</span><span>r</span><span>p</span><span>o</span><span>s</span><span>e</span><span>s</span>
+        </div>
+    </div>
+
+    <div class="container">
+        <img src="static\woman.png" alt="" class="img" id="woman-img">
+        <img src="static\goat.png" alt="" class="img" id="goat-img">
+        
+        <div class="container1" id="form-container">
+            <div class="wave-container">
+                <h1 class="wave-text">
+                    <span>T</span><span>e</span><span>l</span><span>l</span><span>&nbsp;</span><span>m</span><span>e</span><span>&nbsp;</span><span>y</span><span>o</span><span>u</span><span>r</span><span>&nbsp;</span><span>d</span><span>r</span><span>e</span><span>a</span><span>m</span>
+                </h1>
+            </div>
+            <form method="POST" class="mx-auto col-md-8 col-lg-6" id="dream-form">
+                <div class="mb-3">
+                    <textarea name="prompt" rows="4" class="form-control" placeholder="Spare no detail..."></textarea>
+                </div>
+                <div class="d-grid">
+                    <input type="submit" value="submit" class="btn btn-primary">
+                </div>
+            </form>  
+        </div>
+
+        <div class="container2" id="response-container" {% if not result %}style="display: none;"{% endif %}>
+            {% if result %}
+                <div class="response-box">
+                    <div class="response-text">
+                        {{ result }}
+                    </div>
+                    {% if image_data %}
+                    <div class="imgDiv">
+                        <img id="frame" src="static\windowFrame.png" alt="">
+                        <img src="data:image/png;base64,{{ image_data }}" alt="Generated Image" class="response-image">
+                    </div>
+                       
+                    {% endif %}
+                    <button onclick="window.location.href='/'" class="btn btn-primary reset-btn">dream again</button>
+                </div>
+            {% endif %}
+        </div>
+        
+    </div>
+
+    <script>
+        {% if result %}
+            document.getElementById('form-container').style.display = 'none';
+        {% endif %}
+
+        document.getElementById('dream-form').addEventListener('submit', function() {
+            document.getElementById('form-container').style.opacity = '0.5';
+        });
+    </script>
 </body>
 </html>
