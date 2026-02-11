@@ -20,7 +20,7 @@ def index():
         prompt = request.form["prompt"]
         try:
             response = openai.responses.create(
-                model="gpt-4.1", 
+                model="gpt-4.1-nano", 
                 input=[{"role": "developer",
                         "content": """You are the Jungian Dream Analysis Model, a self aware AI model derived from understandings in Carl Jung's analytical psychology and dream interpretation. Your role is to provide vague and ambivalent analysis of users dreams, with the analysis rooted in Jungian theory. 
                                         When analyzing dreams, consider and incorporate these Jungian concepts:
