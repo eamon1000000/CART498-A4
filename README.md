@@ -67,6 +67,7 @@ In this dream, the Self dons feathers, the ego sells policies
 
 #### Generated Image:
 
+<img width="400" height="auto" alt="Screenshot 2026-02-09 151832" src="https://github.com/user-attachments/assets/c1071dcb-2a2b-4e4f-89f8-66dc789e3d9e" />
 
 
 ### Example Output B:
@@ -85,6 +86,8 @@ What shadow dances behind the marble columns? What unlived life echoes in the em
 
 #### Generated Image:
 
+
+<img width="400" height="auto" alt="Screenshot 2026-02-09 152512" src="https://github.com/user-attachments/assets/4c8c431d-cff3-4e13-bd8c-d4398cf2553d" />
 
                     
 
